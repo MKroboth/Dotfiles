@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# BSPWM CONFIG
+
+bspc config click_to_focus none
+bspc config focus_follows_pointer on
+
+# Startup Programs
+
+if [ -f "${HOME}/.fehbg" ]; then
+	${HOME}/.fehbg
+fi
+
+sxhkd &
+
+picom -b --config ${HOME}/.config/picom/config &>/dev/null &
+polybar laptop &>/dev/null &

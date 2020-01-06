@@ -1,0 +1,15 @@
+# Application Shortcuts
+super + shift + Return
+	kitty
+
+super + x;  w 
+	qutebrowser
+
+super + p
+	rofi -show run
+
+# BSPWM Keybindings
+super + shift + c
+	bspc node -c
+
+

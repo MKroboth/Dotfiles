@@ -1,0 +1,20 @@
+- defaults:
+        link:
+                relink: true
+- clean: ['~']
+- link:
+        ~/.config/bspwm: config/bspwm
+        ~/.config/keepassxc: config/keepassxc
+        ~/.config/kitty: config/kitty
+        ~/.config/picom: config/picom
+        ~/.config/polybar: config/polybar
+        ~/.config/qutebrowser: config/qutebrowser
+        ~/.config/ranger: config/ranger
+        ~/.config/sxhkd: config/sxhkd
+        ~/.config/zathura: config/zathura
+        ~/.gitconfig: gitconfig
+        ~/.vim: vim
+        ~/.ssh/config: ssh.config
+
+- create:
+        - ~/.config

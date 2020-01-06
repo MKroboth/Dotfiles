@@ -1,0 +1,14 @@
+[user]
+	name = Maximilian Kroboth
+	email = mkr@cactis.eu
+	signingkey = 0216C29B606D027C728A9CB590914E0307090218
+[diff]
+	external = vimdiff
+	tool = vimdiff
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

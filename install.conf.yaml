@@ -15,6 +15,14 @@
         ~/.gitconfig: gitconfig
         ~/.vim: vim
         ~/.ssh/config: ssh.config
+        ~/.config/systemd/user: systemd
+        ~/.zlogin: zlogin
+        ~/.zlogout: zlogout
+        ~/.zpreztorc: zpreztorc
+        ~/.zprofile: zprofile
+        ~/.zshenv: zshenv
+        ~/.zshrc: zshrc
 
 - create:
         - ~/.config
+        - ~/.config/systemd

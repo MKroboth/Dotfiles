@@ -7,6 +7,10 @@ bspc config focus_follows_pointer on
 
 # Startup Programs
 
+xsetroot -cursor_name left_ptr
+
+systemctl --user start window-manager.target
+
 if [ -f "${HOME}/.fehbg" ]; then
 	${HOME}/.fehbg
 fi
@@ -14,4 +18,10 @@ fi
 sxhkd &
 
 picom -b --config ${HOME}/.config/picom/config &>/dev/null &
-polybar laptop &>/dev/null &
+
+target=laptop
+if [ $(hostname) == "elektra" ]; then
+target=workstation
+fi
+
+polybar $target &>/dev/null &

@@ -1,0 +1,9 @@
+[Unit]
+Description=Displayes a background image
+
+[Service]
+Type=oneshot
+ExecStart=/home/mkr/.fehbg
+
+[Install]
+WantedBy=window-manager.target

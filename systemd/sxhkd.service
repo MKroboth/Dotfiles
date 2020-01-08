@@ -1,0 +1,10 @@
+[Unit]
+Description=Keybinding Daemon
+
+[Service]
+Type=exec
+ExecStart=/bin/sxhkd
+
+[Install]
+WantedBy=window-manager.target
+

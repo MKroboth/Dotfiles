@@ -6,8 +6,8 @@
 #
 
 # Source Prezto.
-if [[ -s "$HOME/.config/zprezto/init.zsh" ]]; then
-  source "${HOME}/.config/zprezto/init.zsh"
+if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
+  source "${HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...

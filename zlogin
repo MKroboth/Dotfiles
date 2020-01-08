@@ -5,6 +5,10 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+if ! xset q &>/dev/null; then
+	startx
+fi
+
 # Execute code that does not affect the current session in the background.
 {
   # Compile the completion dump to increase startup speed.

@@ -1,0 +1,49 @@
+[Data Source]
+DisplayName=Work
+Enabled=true
+Parent=215e135098edb2ca99337e8db949408931bb11cb
+
+[Mail Submission]
+SentFolder=folder://215e135098edb2ca99337e8db949408931bb11cb/Sent
+TransportUid=f0fb16323f682874bf3328cd2fceab0176391245
+RepliesToOriginFolder=false
+UseSentFolder=true
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://215e135098edb2ca99337e8db949408931bb11cb/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=folder://local/Templates
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=mkr@cactis.eu
+Aliases=
+Name=Maximilian Kroboth
+Organization=
+ReplyTo=
+SignatureUid=none
+
+[Pretty Good Privacy (OpenPGP)]
+AlwaysTrust=false
+EncryptToSelf=true
+KeyId=07090218
+SigningAlgorithm=
+SignByDefault=true
+EncryptByDefault=false
+PreferInline=false
+
+[Message Disposition Notifications]
+ResponsePolicy=ask
+
+[Secure MIME (S/MIME)]
+EncryptionCertificate=
+EncryptByDefault=false
+EncryptToSelf=true
+SigningAlgorithm=
+SigningCertificate=
+SignByDefault=false

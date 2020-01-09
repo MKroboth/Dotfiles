@@ -1,0 +1,19 @@
+[Data Source]
+DisplayName=Office
+Enabled=true
+Parent=a059b8c0d40deb7d5082bc5f0a7484348758a348
+
+[Authentication]
+Host=stricted.net
+Method=CRAM-MD5
+Port=465
+ProxyUid=system-proxy
+RememberPassword=true
+User=office@kroboth-home.at
+CredentialName=
+
+[Security]
+Method=ssl-on-alternate-port
+
+[Mail Transport]
+BackendName=smtp

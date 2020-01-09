@@ -1,0 +1,12 @@
+[Unit]
+Description=Evolution Mail Client
+Wants=network-online.target
+
+
+[Service]
+Type=exec
+ExecStart=/bin/evolution
+
+[Install]
+WantedBy=window-manager.target
+

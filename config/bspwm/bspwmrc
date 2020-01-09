@@ -5,18 +5,32 @@
 bspc config click_to_focus none
 bspc config focus_follows_pointer on
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Startup Programs
 
-xsetroot -cursor_name left_ptr
+start_programs () {
+actual_border_width=$(bspc config border_width)
 
+bspc config border_width 0
+
+xsetroot -cursor_name left_ptr
+systemctl --user start pulseaudio.service
+
+if [ -f "${HOME}/.keypw" ]; then
+  bspc rule --add KeePassXC --one-shot hidden=on
+  cat "${HOME}/.keypw" | keepassxc "${HOME}/Passwords.kdbx" --pw-stdin &
+fi
+bspc rule --add TelegramDesktop --one-shot border=off
 systemctl --user start window-manager.target
+
+
+sxhkd &
+bspc wm --adopt-orphans
 
 if [ -f "${HOME}/.fehbg" ]; then
 	${HOME}/.fehbg
 fi
-
-sxhkd &
-
 picom -b --config ${HOME}/.config/picom/config &>/dev/null &
 
 target=laptop
@@ -25,3 +39,9 @@ target=workstation
 fi
 
 polybar $target &>/dev/null &
+}
+
+start_programs
+unset start_programs
+
+bspc config border_width $actual_border_width

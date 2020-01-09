@@ -1,0 +1,10 @@
+[Unit]
+Description=Telegram Chat Client
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/telegram-desktop -startintray
+
+[Install]
+WantedBy=window-manager.target
+

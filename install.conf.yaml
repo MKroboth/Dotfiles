@@ -2,6 +2,9 @@
         link:
                 relink: true
 - clean: ['~']
+- create:
+        - ~/.config
+        - ~/.config/systemd
 - link:
         ~/.config/bspwm: config/bspwm
         ~/.config/keepassxc: config/keepassxc
@@ -12,6 +15,7 @@
         ~/.config/ranger: config/ranger
         ~/.config/sxhkd: config/sxhkd
         ~/.config/zathura: config/zathura
+        ~/.config/evolution: config/evolution
         ~/.gitconfig: gitconfig
         ~/.vim: vim
         ~/.ssh/config: ssh.config
@@ -22,7 +26,4 @@
         ~/.zprofile: zprofile
         ~/.zshenv: zshenv
         ~/.zshrc: zshrc
-
-- create:
-        - ~/.config
-        - ~/.config/systemd
+        ~/.m2/toolchains.xml: maven/toolchains.xml

@@ -1,0 +1,19 @@
+[Data Source]
+DisplayName=Work
+Enabled=true
+Parent=215e135098edb2ca99337e8db949408931bb11cb
+
+[Authentication]
+Host=stricted.net
+Method=CRAM-MD5
+Port=465
+ProxyUid=system-proxy
+RememberPassword=true
+User=mkr@cactis.eu
+CredentialName=
+
+[Security]
+Method=ssl-on-alternate-port
+
+[Mail Transport]
+BackendName=smtp

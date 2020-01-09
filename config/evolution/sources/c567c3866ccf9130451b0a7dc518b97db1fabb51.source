@@ -1,0 +1,49 @@
+[Data Source]
+DisplayName=Office
+Enabled=true
+Parent=a059b8c0d40deb7d5082bc5f0a7484348758a348
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=ad9a1141a0feaa4429ee988ed6ae363d1b29b80c
+RepliesToOriginFolder=false
+UseSentFolder=true
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=folder://local/Templates
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=office@kroboth-home.at
+Aliases=
+Name=Kroboth Household
+Organization=
+ReplyTo=
+SignatureUid=none
+
+[Pretty Good Privacy (OpenPGP)]
+AlwaysTrust=false
+EncryptToSelf=true
+KeyId=A1B8D1E6
+SigningAlgorithm=
+SignByDefault=false
+EncryptByDefault=false
+PreferInline=false
+
+[Message Disposition Notifications]
+ResponsePolicy=ask
+
+[Secure MIME (S/MIME)]
+EncryptionCertificate=
+EncryptByDefault=false
+EncryptToSelf=true
+SigningAlgorithm=
+SigningCertificate=
+SignByDefault=false

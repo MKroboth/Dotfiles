@@ -1,0 +1,16 @@
+[Unit]
+Description=Evolution Mail Client
+Wants=network-online.target
+
+
+[Service]
+Type=forking
+ExecStart=/bin/emacs --daemon
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh
+Restart=on-failure
+
+
+[Install]
+WantedBy=window-manager.target
+

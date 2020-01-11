@@ -18,15 +18,13 @@ xsetroot -cursor_name left_ptr
 systemctl --user start pulseaudio.service
 
 if [ -f "${HOME}/.keypw" ]; then
-  bspc rule --add KeePassXC --one-shot hidden=on
   cat "${HOME}/.keypw" | keepassxc "${HOME}/Passwords.kdbx" --pw-stdin &
 fi
-bspc rule --add TelegramDesktop --one-shot border=off
 systemctl --user start window-manager.target
 
 
 sxhkd &
-bspc wm --adopt-orphans
+#bspc wm --adopt-orphans
 
 if [ -f "${HOME}/.fehbg" ]; then
 	${HOME}/.fehbg

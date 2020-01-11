@@ -5,6 +5,9 @@ super + shift + Return
 super + x;  w 
 	qutebrowser
 
+super +x;   e
+	emacsclient -c -a emacs
+
 super + p
 	rofi -show run
 

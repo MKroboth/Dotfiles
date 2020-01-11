@@ -1,0 +1,10 @@
+[Unit]
+Description=Keybinding Daemon
+
+[Service]
+Type=exec
+ExecStart=/lib64/kdeconnectd -platform offscreen
+
+[Install]
+WantedBy=window-manager.target
+

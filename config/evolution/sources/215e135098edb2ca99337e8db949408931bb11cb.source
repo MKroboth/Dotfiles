@@ -6,7 +6,7 @@ Parent=
 [Mail Account]
 BackendName=imapx
 IdentityUid=701559c983865fa6f9c93aa9a7677b4b50a7a0b0
-ArchiveFolder=
+ArchiveFolder=folder://215e135098edb2ca99337e8db949408931bb11cb/Archives
 NeedsInitialSetup=false
 MarkSeen=inconsistent
 MarkSeenTimeout=1500

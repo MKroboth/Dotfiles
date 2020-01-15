@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/sh 
+
 
 # BSPWM CONFIG
 
@@ -6,8 +7,14 @@ bspc config click_to_focus none
 bspc config focus_follows_pointer on
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-
 # Startup Programs
+
+for f in /etc/X11/xinit/xinitrc.d/*; do
+  if [ -x "$f" ]; then
+    "$f" &
+  fi
+done
+
 
 start_programs () {
 actual_border_width=$(bspc config border_width)
@@ -20,14 +27,18 @@ systemctl --user start pulseaudio.service
 if [ -f "${HOME}/.keypw" ]; then
   cat "${HOME}/.keypw" | keepassxc "${HOME}/Passwords.kdbx" --pw-stdin &
 fi
-systemctl --user start window-manager.target
+
+dex -a &
+dex -a -s ${HOME}/.config/bspwm/autostart &
 
 
-sxhkd &
+systemctl --user start window-manager.target 
+
+#sxhkd &
 #bspc wm --adopt-orphans
 
 if [ -f "${HOME}/.fehbg" ]; then
-	${HOME}/.fehbg
+true;#${HOME}/.fehbg &
 fi
 picom -b --config ${HOME}/.config/picom/config &>/dev/null &
 
@@ -36,10 +47,10 @@ if [ $(hostname) == "elektra" ]; then
 target=workstation
 fi
 
-polybar $target &>/dev/null &
+polybar $target &>/dev/null & 
 }
 
-start_programs
+start_programs &> /tmp/bspwm_startup.log
 unset start_programs
 
 bspc config border_width $actual_border_width

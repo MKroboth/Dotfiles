@@ -31,7 +31,7 @@ fi
 
 dex -a &
 dex -a -s ${HOME}/.config/bspwm/autostart &
-
+kdeconnect-indicator &
 
 systemctl --user start window-manager.target 
 

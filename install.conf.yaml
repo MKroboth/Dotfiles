@@ -5,6 +5,7 @@
 - create:
         - ~/.config
         - ~/.config/systemd
+        - ~/.m2
 - link:
         ~/.config/bspwm: config/bspwm
         ~/.config/keepassxc: config/keepassxc

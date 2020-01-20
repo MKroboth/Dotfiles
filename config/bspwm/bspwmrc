@@ -5,10 +5,10 @@
 
 bspc config click_to_focus none
 bspc config focus_follows_pointer on
-bspc monitor --reset-desktops $(seq 1 9) 'Scratchpad'
+bspc monitor --reset-desktops $(seq 1 9) 'Scratchpad' 'Starting'
 
 bspc rule --add Emacs state=tiled
-
+bspc rule -a TelegramDesktop -o desktop=Starting
 export _JAVA_AWT_WM_NONREPARENTING=1
 # Startup Programs
 
@@ -34,7 +34,7 @@ fi
 
 dex -a &
 dex -a -s ${HOME}/.config/bspwm/autostart &
-kdeconnect-indicator &
+(kdeconnect-cli -l; kdeconnect-indicator) &
 
 systemctl --user start window-manager.target 
 
@@ -44,7 +44,6 @@ target=laptop
 if [ $(hostname) == "elektra" ]; then
 target=workstation
 fi
-
 polybar $target &>/dev/null & 
 }
 
@@ -52,3 +51,4 @@ start_programs &> /tmp/bspwm_startup.log
 unset start_programs
 
 bspc config border_width $actual_border_width
+(sleep 1; bspc node $(while ! bspc query -N -d Starting; do sleep 1; done) -c; bspc desktop Starting --remove)

@@ -19,6 +19,7 @@
         ~/.config/evolution: config/evolution
         ~/.gitconfig: gitconfig
         ~/.vim: vim
+        ~/.vimrc: vimrc
         ~/.ssh/config: ssh.config
         ~/.config/systemd/user: systemd
         ~/.zlogin: zlogin

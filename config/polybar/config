@@ -46,13 +46,13 @@ tray-padding = 2
 ;tray-background = #0063ff
 tray-maxsize = 48
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -86,20 +86,20 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center =
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date
+modules-right = filesystem pulseaudio xkeyboard memory cpu eth temperature date
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 tray-maxsize = 48
 
-;wm-restack = bspwm
+s;wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -140,19 +140,19 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 

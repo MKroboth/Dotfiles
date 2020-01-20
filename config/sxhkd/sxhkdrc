@@ -1,18 +1,32 @@
 # Application Shortcuts
-super + shift + Return
-	kitty
+super + shift + Return 
+	systemd-run --user kitty
 
-super + x;  w 
-	qutebrowser
+super + x;  w
+	systemd-run --user qutebrowser
 
-super +x;   e
-	emacsclient -c -a emacs
+super +x;   e 
+	systemd-run --user emacsclient -c -a emacs
 
-super + p
-	rofi -show run
+super + p 
+	systemd-run --user rofi -show run
 
 # BSPWM Keybindings
-super + shift + c
+super + shift + c 
 	bspc node -c
 
+super + {1,2,3,4,5,6,7,8,9,0}
+	bspc desktop \^{1,2,3,4,5,6,7,8,9,10} --focus
 
+super + shift + {1,2,3,4,5,6,7,8,9,0} 
+	bspc node focused --to-desktop \^{1,2,3,4,5,6,7,8,9,10}
+
+super + {h,j,k,l,[,]}
+	bspc node {west, south, north, east, prev, next} --focus
+super + shift + {h,j,k,l,[,]}
+	bspc node --swap {west, south, north, east, prev, next}
+
+super + {w,e,r}
+	bsp monitor \^{1,2,3} --focus
+super + shift + {w,e,r}
+	bspc node --to-monitor \^{1,2,3}

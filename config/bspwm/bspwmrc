@@ -5,6 +5,9 @@
 
 bspc config click_to_focus none
 bspc config focus_follows_pointer on
+bspc monitor --reset-desktops $(seq 1 9) 'Scratchpad'
+
+bspc rule --add Emacs state=tiled
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 # Startup Programs

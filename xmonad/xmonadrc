@@ -1,0 +1,35 @@
+#!/bin/sh
+
+if [ "$(polybar --list-monitors | wc -l)" -eq 3 ]; then
+  xrandr --output $(polybar --list-monitors | sed -n 2p | awk -F: '/:/ {print $1}') --primary
+fi
+
+for f in /etc/X11/xinit/xinitrc.d/*; do
+  if [ -x "$f" ]; then
+    "$f" &
+  fi
+done
+
+setxkbmap -option compose:ralt
+
+xsetroot -cursor_name left_ptr
+systemctl --user start pulseaudio.service
+
+if [ -f "${HOME}/.keypw" ]; then
+  keepassxc --config "$(realpath ${HOME}/.config/keepassxc/keepassxc.ini)" --pw-stdin "${HOME}/Passwords.kdbx" <"${HOME}/.keypw" &
+fi
+
+dex -a &
+dex -a -s ${HOME}/.autostart &
+(kdeconnect-cli -l; kdeconnect-indicator) &
+
+systemctl --user start window-manager.target 
+
+picom -b --config ${HOME}/.config/picom/config &>/dev/null &
+
+target=laptop
+if [ $(hostname) == "elektra" ]; then
+target=workstation
+fi
+
+MONITOR=$(polybar --list-monitors | awk -F: ' /primary/ { print $1}') polybar --reload $target &>/dev/null &

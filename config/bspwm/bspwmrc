@@ -1,11 +1,16 @@
-#!/bin/sh 
+#!/bin/sh -x
 
 
 # BSPWM CONFIG
 
 bspc config click_to_focus none
 bspc config focus_follows_pointer on
+
+
 bspc monitor --reset-desktops $(seq 1 9) 'Scratchpad' 'Starting'
+for monit in $(bspc query -M); do
+bspc monitor $monit --reset-desktops $(seq 1 9) 'Scratchpad' 
+done
 
 bspc rule --add Emacs state=tiled
 bspc rule -a TelegramDesktop -o desktop=Starting
@@ -44,7 +49,9 @@ target=laptop
 if [ $(hostname) == "elektra" ]; then
 target=workstation
 fi
-polybar $target &>/dev/null & 
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar --reload $target &>/dev/null &
+done 
 }
 
 start_programs &> /tmp/bspwm_startup.log

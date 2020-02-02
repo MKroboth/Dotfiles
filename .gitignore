@@ -1,2 +1,8 @@
 config/evolution/.running
 config/evolution/mail/folders
+*.o
+*.hi
+xmonad/xmonad-x86_64-linux
+xmonad/xmonad.errors
+xmonad/.stack-work/
+xmonad/stack.yaml.lock

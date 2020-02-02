@@ -29,3 +29,5 @@
         ~/.zshenv: zshenv
         ~/.zshrc: zshrc
         ~/.m2/toolchains.xml: maven/toolchains.xml
+        ~/.xmonad: xmonad
+

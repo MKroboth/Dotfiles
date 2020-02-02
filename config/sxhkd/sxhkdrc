@@ -16,10 +16,10 @@ super + shift + c
 	bspc node -c
 
 super + {1,2,3,4,5,6,7,8,9,0}
-	bspc desktop \^{1,2,3,4,5,6,7,8,9,10} --focus
+	${HOME}/.config/sxhkd/change-desktop.sh {1,2,3,4,5,6,7,8,9,10} bspc desktop --focus
 
 super + shift + {1,2,3,4,5,6,7,8,9,0} 
-	bspc node focused --to-desktop \^{1,2,3,4,5,6,7,8,9,10}
+	bspc node focused --to-desktop \^{1,2,3,4,5,6,7,8,9,10} 
 
 super + {h,j,k,l,[,]}
 	bspc node {west, south, north, east, prev, next} --focus

@@ -3,6 +3,7 @@
                 relink: true
 - clean: ['~']
 - create:
+        - ~/bin
         - ~/.config
         - ~/.config/systemd
         - ~/.m2
@@ -30,4 +31,4 @@
         ~/.zshrc: zshrc
         ~/.m2/toolchains.xml: maven/toolchains.xml
         ~/.xmonad: xmonad
-
+        ~/bin/utils: utils

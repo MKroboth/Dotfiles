@@ -13,7 +13,8 @@ done
 setxkbmap -option compose:ralt
 
 xsetroot -cursor_name left_ptr
-systemctl --user start pulseaudio.service
+
+
 
 if [ -f "${HOME}/.keypw" ]; then
   keepassxc --config "$(realpath ${HOME}/.config/keepassxc/keepassxc.ini)" --pw-stdin "${HOME}/Passwords.kdbx" <"${HOME}/.keypw" &

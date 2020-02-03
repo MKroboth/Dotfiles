@@ -84,7 +84,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = workspaces-xmonad
 modules-center =
-modules-right = filesystem pulseaudio xkeyboard memory cpu eth temperature date
+modules-right = filesystem pulseaudio xkeyboard memory cpu eth ups temperature date
 
 tray-position = right
 tray-padding = 2
@@ -114,6 +114,9 @@ exec = tail -F /tmp/.xmonad-title-log
 exec-if = [ -p /tmp/.xmonad-title-log ]
 tail = true
 
+[module/ups]
+type = custom/script
+exec = ~/bin/utils/ups-status.sh
 
 [module/xwindow]
 type = internal/xwindow

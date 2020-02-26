@@ -1,4 +1,5 @@
 config/evolution/.running
+config/evolution/mail/state.ini
 config/evolution/mail/folders
 *.o
 *.hi

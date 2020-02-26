@@ -62,3 +62,6 @@ main = withLogFifo $ \logFifo -> (getEnv "HOME") >>= \home -> xmonad $ do
           , ("M-x e", safeSpawn "emacsclient" ["-c", "-a", "emacs"])
           , ("M-b", sendMessage ToggleStruts)
           ]
+  keys =- [ "M-w", "M-e", "M-r", "M-S-w", "M-S-e", "M-S-r" ]
+  withScreens $ do
+    sKeys =: ["w","e","r"]

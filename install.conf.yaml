@@ -7,6 +7,7 @@
         - ~/.config
         - ~/.config/systemd
         - ~/.m2
+        - ~/.config/yaourt
 - link:
         ~/.config/bspwm: config/bspwm
         ~/.config/keepassxc: config/keepassxc
@@ -32,3 +33,4 @@
         ~/.m2/toolchains.xml: maven/toolchains.xml
         ~/.xmonad: xmonad
         ~/bin/utils: utils
+        ~/.config/yaourt/yaourtrc: yaourtrc

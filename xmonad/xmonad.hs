@@ -60,4 +60,5 @@ main = withLogFifo $ \logFifo -> (getEnv "HOME") >>= \home -> xmonad $ do
           , ("M-S-<Return>", safeSpawnProg "kitty")
           , ("M-x w", safeSpawnProg "qutebrowser")
           , ("M-x e", safeSpawn "emacsclient" ["-c", "-a", "emacs"])
+          , ("M-b", sendMessage ToggleStruts)
           ]
